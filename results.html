@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Malaria Cell Infection Detector</title>
+        <meta charset="utf-8" />
+        <style>
+        label{
+            padding: 10px;
+            background: none;
+            display: table;
+            color: #fff;
+            }
+
+
+
+        input[type="file"] {
+            display: none;
+        }
+        .bg {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+
+    }
+        </style>
+				<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+				<link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}" />
+				<noscript><link rel="stylesheet" href="{{ url_for('static',filename='noscript.css') }}" /></noscript>
+
+	</head>
+	<body class="landing is-preload">
+
+
+				<!-- Banner -->
+
+          <center>
+          {% if pred ==True %}
+            <img src= "static/banner.png" class="bg" height=100% width = 100%>
+          {% else %}
+            <img src= "static/greenery.png" class="bg" height=100% width = 100%>
+          {% endif %}
+
+          <img src = "static/out.png" width = 200></img><br>
+          <br>
+          <br>
+          
+          <h2> {{ result }}</h2>
+
+          </center>
+
+
+
+			<script src=" {{ url_for('static', filename='jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='jquery.scrollex.min.js') }}"></script>
+			<script src=" {{ url_for('static', filename='jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+			function entered()
+			{
+				document.getElementById('#bb').innerHTML="You Have Uploaded the File";
+			}</script>
+
+	</body>
+</html>
